@@ -8,7 +8,7 @@ from tensorflow.keras.models import Model
 # Define parameters
 IMG_SIZE = (640, 640)
 BATCH_SIZE = 32
-NUM_CLASSES = len(os.listdir('data'))  # Number of persons/classes, assuming each person has a separate folder
+NUM_CLASSES = len(os.listdir('../data'))  # Number of persons/classes, assuming each person has a separate folder
 
 # Data generators for training and validation
 train_datagen = ImageDataGenerator(
