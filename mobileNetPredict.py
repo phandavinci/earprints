@@ -19,20 +19,21 @@ def mobile(image_path):
 
     # Make predictions
     predictions = model.predict(img_array)
+    print(predictions)
     class_index = np.argmax(predictions)
-    
+    print(class_index)
     # Get class names
     class_names = sorted(os.listdir('../dataset'))
+    print(class_names)
 
     print('Predicted Class:'+class_names[class_index])
 
 def predict_class(image_path):
     if os.path.exists('ear'): shutil.rmtree('ear')
     results = model(image_path)
-    for result in results:
+    for i, result in enumerate(results):
         result.save_crop('')
-        mobile('ear/im.jpg.jpg')
-    shutil.rmtree('ear')
+        mobile('ear/im.jpg'+(str(i+1) if i>0 else '')+'.jpg')
 
 def detect_ear_and_class():
     # Function to detect ear and return the class

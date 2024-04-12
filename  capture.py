@@ -4,7 +4,7 @@ import uuid
 from earExtraction import forChangingWholeDir
 
 # className = input("Enter the className: ")
-path = os.path.join('../data',  'shakthi')
+path = os.path.join('../data')
 if not os.path.exists(path): os.makedirs(path)
 
 cap  = cv2.VideoCapture(1)
