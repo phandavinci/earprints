@@ -26,7 +26,7 @@ def mobile(image_path):
     class_index = np.argmax(predictions)
     print(class_index)
     # Get class names
-    class_names = sorted(os.listdir('../dataset'))
+    class_names = ['Abishek', 'Hariprasath', 'Shakthi Kumaran', 'Yokesh']
     print(class_names)
 
     return class_names[class_index].capitalize()
