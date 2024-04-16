@@ -35,14 +35,7 @@ def load_and_preprocess_data(dataset_dir, img_height, img_width, batch_size):
     test_df['labels'] = test_df['labels'].map(class_mapping)
 
     # Preprocess input images
-    train_datagen = ImageDataGenerator(
-        rescale=1./255, 
-        rotation_range=7,
-        width_shift_range=0.05,
-        height_shift_range=0.05,
-        brightness_range=[0.85, 1.25],  # Randomly change brightness
-        zoom_range=[0.95, 1.1], 
-    )
+    train_datagen = ImageDataGenerator(rescale=1./255)
 
     test_datagen = ImageDataGenerator(rescale=1./255)
 
